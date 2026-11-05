@@ -17,7 +17,16 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 NOTICE = "Copyright (C) 2008 - 2026 Execute Software.  All rights reserved."
 HEADER_EXEMPT = {"Cargo.lock", "VERSION"}
-PUBLIC_REPOSITORIES = {"exec-hag", "exec-nil-framework"}
+PUBLIC_REPOSITORIES = {
+    "exec-anomalous",
+    "exec-antimatter",
+    "exec-beholdd",
+    "exec-displacer",
+    "exec-hag",
+    "exec-library-csharp-zignals",
+    "exec-nil-framework",
+    "exec-nora",
+}
 LOCAL_PATH = re.compile(
     r"/(?:home|Users|Incubator|Execute)/[A-Za-z0-9_.-]+"
     r"|[A-Za-z]:[\\/](?:Users|Documents and Settings)[\\/][A-Za-z0-9_.-]+"
