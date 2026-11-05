@@ -130,6 +130,9 @@ documented in [thirdparty.md](thirdparty.md).
 
 ## Support
 
+HAG is built by Execute Software and its community. See
+[CONTRIBUTORS.md](CONTRIBUTORS.md) for the core team and contributor credits.
+
 Contributions, reproducible bug reports, and documentation improvements are
 welcome. To support development financially, visit
 [Buy Me a Coffee](https://www.buymeacoffee.com/execsoftware).

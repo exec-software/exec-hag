@@ -9,6 +9,10 @@ team and the community.
 ## Original contributors
 
 - Nathan Young
+- George Gilbert
+- Ryan Nierman
+- Elizabeth Young
+- Eli Young
 
 ## Community contributors
 
