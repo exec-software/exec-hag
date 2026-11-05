@@ -1,0 +1,111 @@
+.\" Copyright (C) 2008 - 2026 Execute Software.  All rights reserved.
+.\" SPDX-License-Identifier: MIT
+.TH HAG 3 "May 2025" "Hag 0.1.0" "Hag AI Compute Runtime"
+.SH NAME
+hag \- High-Performance AI GPU Compute API
+.SH SYNOPSIS
+.nf
+#include <hag/api.h>
+.fi
+.SH DESCRIPTION
+Hag is a bare-metal API specifically designed for AI/ML workloads.
+It provides a unified, high-performance compute layer that runs on any
+modern GPU hardware without requiring vendor-specific closed-source drivers.
+.SH API FUNCTIONS
+.SS Instance Management
+.nf
+HagResult hagCreateInstance(const HagInstanceCreateInfo* pCreateInfo,
+                            HagInstance* pInstance);
+void hagDestroyInstance(HagInstance instance);
+.fi
+.SS Device Management
+.nf
+HagResult hagEnumerateDevices(uint32_t* pDeviceCount, HagDevice* pDevices);
+HagResult hagGetDeviceProperties(HagDevice device,
+                                 HagDeviceProperties* pProperties);
+HagResult hagCreateDevice(HagInstance instance,
+                          const HagDeviceCreateInfo* pCreateInfo,
+                          HagDevice* pDevice);
+void hagDestroyDevice(HagDevice device);
+.fi
+.SS Buffer Management
+.nf
+HagResult hagCreateBuffer(HagDevice device,
+                          const HagBufferCreateInfo* pCreateInfo,
+                          HagBuffer* pBuffer);
+void hagDestroyBuffer(HagDevice device, HagBuffer buffer);
+HagResult hagMapBuffer(HagDevice device, HagBuffer buffer, void** ppData);
+void hagUnmapBuffer(HagDevice device, HagBuffer buffer);
+.fi
+.SS Tensor Management
+.nf
+HagResult hagCreateTensor(HagDevice device,
+                          const HagTensorCreateInfo* pCreateInfo,
+                          HagTensor* pTensor);
+void hagDestroyTensor(HagDevice device, HagTensor tensor);
+.fi
+.SS Kernel Management
+.nf
+HagResult hagCreateKernel(HagDevice device,
+                          const HagKernelCreateInfo* pCreateInfo,
+                          HagKernel* pKernel);
+void hagDestroyKernel(HagDevice device, HagKernel kernel);
+.fi
+.SS Command Submission
+.nf
+HagResult hagCreateCmdBuffer(HagDevice device,
+                             const HagCmdBufferCreateInfo* pCreateInfo,
+                             HagCmdBuffer* pCmdBuffer);
+HagResult hagBeginCmdBuffer(HagCmdBuffer cmdBuffer, uint32_t flags);
+HagResult hagEndCmdBuffer(HagCmdBuffer cmdBuffer);
+HagResult hagQueueSubmit(HagQueue queue, uint32_t submitCount,
+                         const HagSubmitInfo* pSubmits, HagEvent fence);
+.fi
+.SH RETURN VALUES
+Most Hag functions return a
+.B HagResult
+value indicating success or failure:
+.TP
+.B HAG_SUCCESS
+Operation completed successfully.
+.TP
+.B HAG_ERROR_OUT_OF_MEMORY
+Memory allocation failed.
+.TP
+.B HAG_ERROR_INVALID_ARGUMENT
+An invalid parameter was provided.
+.TP
+.B HAG_ERROR_DEVICE_LOST
+The GPU device became unavailable.
+.TP
+.B HAG_ERROR_NOT_SUPPORTED
+The requested operation is not supported on this device.
+.TP
+.B HAG_ERROR_TIMEOUT
+An operation timed out.
+.SH ENVIRONMENT
+.TP
+.B HAG_LOG_LEVEL
+Set the logging level (0=error, 1=warning, 2=info, 3=debug).
+.TP
+.B HAG_KERNEL_CACHE_DIR
+Override the default kernel cache directory.
+.SH FILES
+.TP
+.I /usr/lib/libhag.so
+Hag shared library.
+.TP
+.I /usr/include/hag/api.h
+Main API header.
+.TP
+.I ~/.cache/hag/
+User-specific kernel cache and configuration.
+.SH BUGS
+Report bugs at: https://github.com/exec-software/exec-hag/issues
+.SH AUTHORS
+Execute Software Architecture Team.
+.SH COPYRIGHT
+MIT License - Copyright (C) 2008 - 2026 Execute Software.  All rights reserved.
+.SH SEE ALSO
+.BR hag-info (1),
+.BR drm (7)

@@ -1,0 +1,80 @@
+# Copyright (C) 2008 - 2026 Execute Software.  All rights reserved.
+# SPDX-License-Identifier: MIT
+
+# Build outputs
+/target/
+sdk/
+build/
+out/
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+tests/results/
+tests/logs/
+*.log
+
+# Documentation build
+man/html/
+man/pdf/
+
+# Third-party build artifacts
+libs/*/build/
+libs/*/*.o
+
+# Temporary files
+/tmp/
+*.tmp
+.cache/
+
+# Local credentials and private machine configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_ed25519
+.netrc
+.npmrc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Core dumps
+core
+core.*
+vgcore.*
+*.dump
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.cmake
+
+# Python (for tooling)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+
+# Archives
+*.tar.gz
+*.zip

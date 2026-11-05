@@ -1,0 +1,41 @@
+.\" Copyright (C) 2008 - 2026 Execute Software.  All rights reserved.
+.\" SPDX-License-Identifier: MIT
+.TH HAG-INFO 1 "May 2025" "Hag 0.1.0" "Hag AI Compute Runtime"
+.SH NAME
+hag-info \- Display information about Hag-compatible GPU devices
+.SH SYNOPSIS
+.B hag-info
+.SH DESCRIPTION
+.B hag-info
+enumerates DRM render nodes on the system and displays basic information
+about each GPU device, including vendor and device IDs.
+.SH OPTIONS
+None currently implemented.
+.SH EXAMPLES
+.nf
+$ hag-info
+Hag Device Enumeration Tool v0.1.0
+=====================================
+
+Found 2 DRM device(s):
+
+Device 0:
+  Path:     /dev/dri/renderD128
+  Vendor:   0x1002 (AMD)
+  Device:   0x744C
+
+Device 1:
+  Path:     /dev/dri/renderD129
+  Vendor:   0x8086 (Intel)
+  Device:   0x56A0
+.fi
+.SH EXIT STATUS
+.TP
+.B 0
+Success.
+.TP
+.B 1
+An error occurred.
+.SH SEE ALSO
+.BR hag (3),
+.BR drm (7)
