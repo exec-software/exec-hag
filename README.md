@@ -135,7 +135,7 @@ HAG is built by Execute Software and its community. See
 
 Contributions, reproducible bug reports, and documentation improvements are
 welcome. To support development financially, visit
-[Buy Me a Coffee](https://www.buymeacoffee.com/execsoftware).
+[Ko-fi](https://ko-fi.com/execsoftware).
 
 For enterprise licensing and support, contact
 [admin@executesoftware.com](mailto:admin@executesoftware.com).
